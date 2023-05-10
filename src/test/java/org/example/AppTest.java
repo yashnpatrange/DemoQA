@@ -21,29 +21,26 @@ public class AppTest {
 
     //method to run tests
     @Test
-    public void Test_1() throws InterruptedException {
+    public void Test_1() {
         driver.get("https://demoqa.com/alerts");
         driver.manage().window().maximize();
         Alerts alerts = new Alerts(driver);
         alerts.ClickTimerAlert();
-        Thread.sleep(2000);
     }
 
     @Test
-    public void Test_2() throws InterruptedException {
+    public void Test_2(){
         driver.get("https://demoqa.com/alerts");
         driver.manage().window().maximize();
         Alerts alerts = new Alerts(driver);
         alerts.ClickPromptAlert();
-        Thread.sleep(3000);
     }
 
     @Test
-    public void Test_3() throws InterruptedException {
+    public void Test_3() {
         driver.get("https://demoqa.com/upload-download");
         driver.manage().window().maximize();
         DownloadUpload downloadUpload= new DownloadUpload(driver);
         downloadUpload.ClickDwldBtn();
-        Thread.sleep(3000);
     }
 }
