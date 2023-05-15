@@ -3,10 +3,7 @@ package org.example.DemoQA;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.example.Pages.DemoQA.Alerts;
-import org.example.Pages.DemoQA.DatePicker;
-import org.example.Pages.DemoQA.DownloadUpload;
-import org.example.Pages.DemoQA.WindowHandle;
+import org.example.Pages.DemoQA.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -68,6 +65,15 @@ public class AppTest {
         datePicker.setDatePicker();
         datePicker.setMonth();
         datePicker.setDay();
+    }
+
+    @Test
+    public void Test_6() throws InterruptedException { //Drag and drop the element
+        driver.get("https://demoqa.com/droppable");
+        driver.manage().window().maximize();
+        DragNDropElement dragNDropElement= new DragNDropElement(driver);
+        dragNDropElement.DragandDrop();
+        Thread.sleep(3000);
     }
 }
 
