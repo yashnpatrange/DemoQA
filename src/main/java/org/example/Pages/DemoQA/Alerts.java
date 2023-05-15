@@ -31,10 +31,11 @@ public class Alerts extends AbstractPage {
     public void ClickTimerAlert() {
         timerAlert.click();
         //explicit wait
+        logger.warn("System will wait for the alert message to show up"); //warning logger
         Alert alert= wait.until(ExpectedConditions.alertIsPresent());
         driver.switchTo().alert();
-        logger.info("explicit waiting for for alert to be visible"); //logger
         alert.accept();
+        logger.info("Alert message accepted successfully");
         driver.switchTo().defaultContent();
     }
 

@@ -29,6 +29,9 @@ public class WindowHandle extends AbstractPage {
                 logger.info("Opened new Tab"); //logger
                 break;
             }
+            else{
+                logger.error("Window focus did not move to new tab");
+            }
         }
         //Close the new tab and switch focus back to original window
         driver.close();
