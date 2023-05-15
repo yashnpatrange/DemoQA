@@ -9,6 +9,7 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
+
 public class Alerts extends AbstractPage {
     public Alerts(WebDriver driver) {
         super(driver);
@@ -32,6 +33,7 @@ public class Alerts extends AbstractPage {
         //explicit wait
         Alert alert= wait.until(ExpectedConditions.alertIsPresent());
         driver.switchTo().alert();
+        logger.info("explicit waiting for for alert to be visible"); //logger
         alert.accept();
         driver.switchTo().defaultContent();
     }
@@ -43,6 +45,7 @@ public class Alerts extends AbstractPage {
         driver.switchTo().alert();
         alert.sendKeys("Generic Text");
         alert.accept();
+        logger.info("Successfully entered the prompt and accepted!"); //logger
         driver.switchTo().defaultContent();
     }
 

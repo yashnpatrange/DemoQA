@@ -26,13 +26,14 @@ public class WindowHandle extends AbstractPage {
         for(String handle: driver.getWindowHandles()){
             if(!handle.equals(originalHandle)){
                 driver.switchTo().window(handle);
+                logger.info("Opened new Tab"); //logger
                 break;
             }
         }
         //Close the new tab and switch focus back to original window
         driver.close();
         driver.switchTo().window(originalHandle);
+        logger.info("Closed the newly opened tab and back to the main window");
     }
 
-    //open
 }
