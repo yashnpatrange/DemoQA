@@ -1,0 +1,26 @@
+2023-05-16 13:24:57,012 INFO o.e.D.AppTest [main] test case Started
+2023-05-16 13:25:18,194 ERROR o.e.P.D.WindowHandle [main] Window focus did not move to new tab
+2023-05-16 13:25:18,216 INFO o.e.P.D.WindowHandle [main] Opened new Tab
+2023-05-16 13:25:18,313 INFO o.e.P.D.WindowHandle [main] Closed the newly opened tab and back to the main window
+2023-05-16 13:26:31,464 INFO o.e.D.AppTest [main] test case Started
+2023-05-16 13:26:48,932 INFO o.e.P.D.DatePicker [main] Month of Feb is selected
+2023-05-16 13:26:49,041 INFO o.e.P.D.DatePicker [main] 14th Day of the month is selected
+2023-05-16 14:45:13,716 INFO o.e.D.AppTest [main] test case Started
+2023-05-16 14:54:29,555 INFO o.e.D.AppTest [main] test case Started
+2023-05-16 14:55:43,879 INFO o.e.D.AppTest [main] test case Started
+2023-05-16 14:56:41,669 WARN o.a.n.h.WebSocketHandler [AsyncHttpClient-1-4] onError
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426) ~[?:?]
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:256) ~[netty-buffer-4.1.90.Final.jar:4.1.90.Final]
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132) ~[netty-buffer-4.1.90.Final.jar:4.1.90.Final]
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357) ~[netty-transport-4.1.90.Final.jar:4.1.90.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151) [netty-transport-4.1.90.Final.jar:4.1.90.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788) [netty-transport-4.1.90.Final.jar:4.1.90.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) [netty-transport-4.1.90.Final.jar:4.1.90.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) [netty-transport-4.1.90.Final.jar:4.1.90.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) [netty-transport-4.1.90.Final.jar:4.1.90.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) [netty-common-4.1.90.Final.jar:4.1.90.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) [netty-common-4.1.90.Final.jar:4.1.90.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) [netty-common-4.1.90.Final.jar:4.1.90.Final]
+	at java.lang.Thread.run(Thread.java:833) [?:?]

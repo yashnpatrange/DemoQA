@@ -68,11 +68,19 @@ public class AppTest {
     }
 
     @Test
-    public void Test_6() throws InterruptedException { //Drag and drop the element
+    public void Test_6() { //Drag and drop the element
         driver.get("https://demoqa.com/droppable");
         driver.manage().window().maximize();
         DragNDropElement dragNDropElement= new DragNDropElement(driver);
         dragNDropElement.DragandDrop();
+    }
+
+    @Test
+    public void Test_7() throws InterruptedException { //Registration form with upload function
+        driver.get("https://demoqa.com/automation-practice-form");
+        driver.manage().window().maximize();
+        FormRegister formRegister= new FormRegister(driver);
+        formRegister.fillForm("John", "Wick", "Jwick@gmail.com","9058648888");
         Thread.sleep(3000);
     }
 }
