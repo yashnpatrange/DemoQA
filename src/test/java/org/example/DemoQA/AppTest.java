@@ -75,7 +75,7 @@ public class AppTest {
         dragNDropElement.DragandDrop();
     }
 
-    @Test
+    @Test //under test
     public void Test_7() throws InterruptedException { //Registration form with upload function
         driver.get("https://demoqa.com/automation-practice-form");
         driver.manage().window().maximize();
@@ -83,5 +83,6 @@ public class AppTest {
         formRegister.fillForm("John", "Wick", "Jwick@gmail.com","9058648888");
         Thread.sleep(3000);
     }
+
 }
 

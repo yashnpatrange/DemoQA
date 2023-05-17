@@ -4,6 +4,7 @@ import org.example.domain.AbstractPage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
@@ -21,7 +22,10 @@ public class FormRegister extends AbstractPage {
     static final String DOB="//input[@id='dateOfBirthInput']";
     static final String DayofMonth="//div[@aria-label='Choose Tuesday, May 16th, 2023']";
     static final String Subjects="//div[@class='subjects-auto-complete__value-container subjects-auto-complete__value-container--is-multi css-1hwfws3']";
-    static final String Checkbox="//div[@class='col-md-9 col-sm-12']//child::input[@type='checkbox']";
+    static final String Checkbox1="//label[text()='Sports' and (@class='custom-control-label')]";
+    static final String Checkbox2="//label[text()='Music' and (@class='custom-control-label')]";
+    static final String UploadFile="//input[@id='uploadPicture']";
+    static final String FilePath="C:\\Users\\ypatrange\\Downloads\\Batman.jpeg";
 
 
     //Objects
@@ -41,8 +45,14 @@ public class FormRegister extends AbstractPage {
     private WebElement dayofMonth;
     @FindBy(how= How.XPATH, using = Subjects)
     public WebElement subjects;
-    @FindBy(how= How.XPATH, using = Checkbox)
-    public WebElement checkbox;
+    @FindBy(how= How.XPATH, using = Checkbox1)
+    public WebElement checkbox1;
+    @FindBy(how= How.XPATH, using = Checkbox2)
+    public WebElement checkbox2;
+    @FindBy(how= How.XPATH, using = UploadFile)
+    public WebElement uploadFile;
+    @FindBy(how= How.XPATH, using = FilePath)
+    public WebElement filePath;
 
     //methods to perform actions
     public void fillForm(String fname, String lname, String e_mail, String phoneNum) {
@@ -53,10 +63,15 @@ public class FormRegister extends AbstractPage {
         number.sendKeys(phoneNum);
         dob.click();
         dayofMonth.click();
+        checkbox1.isSelected();
+        checkbox2.isSelected();
+        uploadFile.sendKeys("C:/Users/ypatrange/Downloads/Batman.jpeg");
+//        WebElement checkbox21=wait.until(ExpectedConditions.visibilityOfElementLocated(checkbox1);
 //        subjects.click();
 //        Actions actions= new Actions(driver);
 //        actions.keyDown(Keys.CONTROL).click().build().perform();
-        List<WebElement> checkboxes=checkbox;
+        //checkbox1.isSelected();
+        //checkbox2.click();
     }
 }
 

@@ -1,0 +1,4 @@
+2023-05-17 10:34:33 INFO  [main] AppTest:19 - test case Started
+2023-05-17 10:34:59 ERROR [main] WindowHandle:33 - Window focus did not move to new tab
+2023-05-17 10:34:59 INFO  [main] WindowHandle:29 - Opened new Tab
+2023-05-17 10:34:59 INFO  [main] WindowHandle:39 - Closed the newly opened tab and back to the main window

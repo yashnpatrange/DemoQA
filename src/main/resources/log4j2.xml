@@ -7,9 +7,9 @@
         <Console name="console" target="SYSTEM_OUT">
             <PatternLayout pattern="${LOG_PATTERN}"/>
         </Console>
-        <File name="MyFile" fileName="logs/app.log">
+        <File name="MyFile" fileName="logs/myapp-${date:yyyy-MM-dd-HH-mm-ss}.log" immediateFlush="true" append="false">
             <PatternLayout>
-                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p [%t] %c{1}:%L - %m%n</Pattern>
             </PatternLayout>
         </File>
     </Appenders>
