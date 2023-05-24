@@ -80,7 +80,28 @@ public class AppTest {
         driver.get("https://demoqa.com/automation-practice-form");
         driver.manage().window().maximize();
         FormRegister formRegister= new FormRegister(driver);
-        formRegister.fillForm("John", "Wick", "Jwick@gmail.com","9058648888");
+        formRegister.fillForm("John", "Wick", "Jwick@gmail.com","9058648888","B12- Empire State Bldg, New York ");
+        formRegister.Chk();
+        formRegister.SelectSubject1();
+        Thread.sleep(3000);
+    }
+
+//    @Test
+//    public void Test_8() throws InterruptedException { //Registration form with upload function
+//        driver.get("https://demoqa.com/automation-practice-form");
+//        driver.manage().window().maximize();
+//        FormRegister formRegister = new FormRegister(driver);
+//        formRegister.ImgUpload();
+//        Thread.sleep(3000);
+//    }
+
+    @Test
+    public void Test_9() throws InterruptedException {
+        driver.get("https://demoqa.com/automation-practice-form");
+        driver.manage().window().maximize();
+        FormRegister formRegister = new FormRegister(driver);
+        formRegister.Chk();
+
         Thread.sleep(3000);
     }
 
