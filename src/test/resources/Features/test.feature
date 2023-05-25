@@ -26,3 +26,7 @@ Feature: Test Feature file
     Then the user should be able to login
     When the user clicks on 'Add Product button'
     Then the user click on cart logo
+    And the user clicks on 'Checkout' button
+    When the user enters firstname "John"  ,lastname "Wick" and zipcode "L5A4C6"
+    And the user click on 'Finish' button
+    Then final message is displayed "Thank you for your order!"

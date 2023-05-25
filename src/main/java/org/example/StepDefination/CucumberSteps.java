@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import static org.junit.Assert.assertTrue;
 
 public class CucumberSteps{
 
@@ -46,6 +47,32 @@ public class CucumberSteps{
     public void theUserClickOnCartLogo() {
         WebElement cartLogo= driver.findElement(By.xpath("//a[@class='shopping_cart_link']"));
         cartLogo.click();
+    }
+    @And("the user clicks on 'Checkout' button")
+    public void ClickOnCheckoutButton() {
+        WebElement ChkoutBtn= driver.findElement(By.xpath("//button[@id='checkout']"));
+        ChkoutBtn.click();
+    }
+    @When("the user enters firstname {string}  ,lastname {string} and zipcode {string}")
+    public void CheckoutInfo(String fname, String lname, String zip) {
+        WebElement firstName= driver.findElement(By.xpath("//input[@id='first-name']"));
+        WebElement lastName= driver.findElement(By.xpath("//input[@id='last-name']"));
+        WebElement zipCode= driver.findElement(By.xpath("//input[@id='postal-code']"));
+        WebElement cntBtn= driver.findElement(By.xpath("//input[@id='continue']"));
+        firstName.sendKeys(fname);
+        lastName.sendKeys(lname);
+        zipCode.sendKeys(zip);
+        cntBtn.click();
+    }
+    @And("the user click on 'Finish' button")
+    public void ClickOnFinishBtn() {
+        WebElement finishBtn= driver.findElement(By.xpath("//button[@id='finish']"));
+        finishBtn.click();
+    }
+    @Then("final message is displayed {string}")
+    public void finalMsg(String msg) {
+        WebElement message= driver.findElement(By.xpath("//h2[text()='Thank you for your order!']"));
+        assertTrue(message.isDisplayed());
     }
     @And("(the user) closes the browser")
     public void CloseBrowser(){
