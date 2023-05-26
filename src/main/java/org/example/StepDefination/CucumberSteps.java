@@ -1,5 +1,7 @@
 package org.example.StepDefination;
 
+import io.cucumber.java.Before;
+import io.cucumber.java.BeforeAll;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -8,11 +10,21 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+
 import static org.junit.Assert.assertTrue;
 
 public class CucumberSteps{
 
     public WebDriver driver;
+
+    @Before
+    public void BeforeAllTests(){
+        System.out.println("Printing before all tests");
+    }
 
     @Given("the user opens the browser and navigates to the homepage {string}")
     public void OpenBrowser(String website) {
@@ -74,12 +86,24 @@ public class CucumberSteps{
         WebElement message= driver.findElement(By.xpath("//h2[text()='Thank you for your order!']"));
         assertTrue(message.isDisplayed());
     }
+    @And("the user clicks on 'open menu' icon")
+    public void ClicksOnMenu() {
+        WebElement menu= driver.findElement(By.xpath("//button[@id='react-burger-menu-btn']"));
+        menu.click();
+    }
+    @When("the user click on 'Logout' link")
+    public void ClickOnLogout() {
+        WebElement logout= driver.findElement(By.xpath("//a[@id='logout_sidebar_link']"));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.elementToBeClickable(logout));
+        logout.click();
+        System.out.println("USer logged out");
+    }
     @And("(the user) closes the browser")
     public void CloseBrowser(){
         driver.close();
         driver.quit();
     }
-
 
 
 }

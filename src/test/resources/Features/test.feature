@@ -1,17 +1,27 @@
-Feature: Test Feature file
+Feature: Product Purchase
 
   Scenario: Opening and CLosing the Chrome browser
     Given the user opens the browser and navigates to the homepage "https://www.saucedemo.com/"
     And the user closes the browser
 
-
+  @login
   Scenario: The user logs in Successfully
     Given the user opens the browser and navigates to the homepage "https://www.saucedemo.com/"
     When the user enters "standard_user" and "secret_sauce"
     Then the user should be able to login
     And the 'Sauce Labs' logo is displayed
     Then the user closes the browser
-    
+
+  @logout
+  Scenario: The user logs out Successfully
+    Given the user opens the browser and navigates to the homepage "https://www.saucedemo.com/"
+    When the user enters "standard_user" and "secret_sauce"
+    Then the user should be able to login
+    And the user clicks on 'open menu' icon
+    When the user click on 'Logout' link
+    Then the user closes the browser
+
+
   Scenario: Add products to the cart
     Given the user opens the browser and navigates to the homepage "https://www.saucedemo.com/"
     When the user enters "standard_user" and "secret_sauce"
