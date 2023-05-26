@@ -5,12 +5,18 @@ Feature: Product Purchase
     And the user closes the browser
 
   @login
-  Scenario: The user logs in Successfully
+  Scenario Outline: The user logs in Successfully
     Given the user opens the browser and navigates to the homepage "https://www.saucedemo.com/"
-    When the user enters "standard_user" and "secret_sauce"
+    When the user enters "<username>" and "<password>"
     Then the user should be able to login
     And the 'Sauce Labs' logo is displayed
     Then the user closes the browser
+    Examples:
+      |  username     | password    |
+      | standard_user |secret_sauce |
+      | problem_user  |secret_sauce |
+      | standard_user |secret_sauce |
+
 
   @logout
   Scenario: The user logs out Successfully
