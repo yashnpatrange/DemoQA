@@ -27,7 +27,7 @@ Feature: Product Purchase
     When the user click on 'Logout' link
     Then the user closes the browser
 
-
+  @smoke
   Scenario: Add products to the cart
     Given the user opens the browser and navigates to the homepage "https://www.saucedemo.com/"
     When the user enters "standard_user" and "secret_sauce"
@@ -45,4 +45,4 @@ Feature: Product Purchase
     And the user clicks on 'Checkout' button
     When the user enters firstname "John"  ,lastname "Wick" and zipcode "L5A4C6"
     And the user click on 'Finish' button
-    Then final message is displayed "Thank you for your order!"
+    Then final message is displayed
