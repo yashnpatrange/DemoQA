@@ -86,14 +86,14 @@ public class AppTest {
         Thread.sleep(3000);
     }
 
-//    @Test
-//    public void Test_8() throws InterruptedException { //Registration form with upload function
-//        driver.get("https://demoqa.com/automation-practice-form");
-//        driver.manage().window().maximize();
-//        FormRegister formRegister = new FormRegister(driver);
-//        formRegister.ImgUpload();
-//        Thread.sleep(3000);
-//    }
+    @Test
+    public void Test_8() throws InterruptedException { //upload function
+        driver.get("https://demoqa.com/upload-download");
+        driver.manage().window().maximize();
+        DownloadUpload downloadUpload= new DownloadUpload(driver);
+        downloadUpload.ClickUploadBtn();
+        Thread.sleep(3000);
+    }
 
     @Test
     public void Test_9() throws InterruptedException {
