@@ -4,6 +4,7 @@ package org.example.DemoQA;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.example.Pages.DemoQA.*;
+import org.example.driver.DefaultLocalDriverFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,7 +18,8 @@ public class AppTest {
     @BeforeEach
     public void setup() {
         logger.info("test case Started"); //logger
-        driver = new ChromeDriver();
+        //driver = new ChromeDriver();
+        driver= new DefaultLocalDriverFactory().create();
     }
     @AfterEach
     public void cleanUp() {
