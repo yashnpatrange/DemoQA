@@ -9,7 +9,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class AppTest {
     public static WebDriver driver;
@@ -19,7 +18,7 @@ public class AppTest {
     public void setup() {
         logger.info("test case Started"); //logger
         //driver = new ChromeDriver();
-        driver= new DefaultLocalDriverFactory().create();
+        driver= new DefaultLocalDriverFactory().create(); //-ea -Dbrowser=edge
     }
     @AfterEach
     public void cleanUp() {

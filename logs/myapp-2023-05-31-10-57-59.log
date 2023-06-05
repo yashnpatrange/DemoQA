@@ -1,0 +1,3 @@
+2023-05-31 10:57:59 INFO  [main] AppTest:20 - test case Started
+2023-05-31 10:58:18 WARN  [main] Alerts:34 - System will wait for the alert message to show up
+2023-05-31 10:58:23 INFO  [main] Alerts:38 - Alert message accepted successfully
