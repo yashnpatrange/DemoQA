@@ -1,32 +1,22 @@
 package org.example.StepDefination.CommerceSteps;
 
-import dev.failsafe.internal.util.Assert;
-import io.cucumber.java.Before;
-import io.cucumber.java.BeforeAll;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.example.Pages.NopCommerce.Customer_Login;
-import org.openqa.selenium.By;
+import org.example.driver.DefaultLocalDriverFactory;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import static dev.failsafe.internal.util.Assert.*;
+
 
 public class CustomerSteps {
 
     public WebDriver driver;
 
-    @Before
-    public void BeforeAllTests(){
-        System.out.println("Printing before all tests");
-    }
-
     @Given("User launch the browser")
     public void OpenBrowser() {
-//        driver= new DefaultLocalDriverFactory().create();
-        driver=new ChromeDriver();
+        driver= new DefaultLocalDriverFactory().create();
+//        driver=new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
     }
@@ -71,16 +61,15 @@ public class CustomerSteps {
         Customer_Login customer_login= new Customer_Login(driver);
         customer_login.setSaveBtn();
     }
-    @Then("user can see the message- {string}")
-    public void userCanSeeTheMessage(String msg) {
-        WebElement element= driver.findElement(By.xpath(""));
-//        Assert.assertTrue(msg, element.isDisplayed());
+    @Then("user can see the message- 'The new customer has been added successfully'")
+    public void userCanSeeTheMessage() {
+        Customer_Login customer_login= new Customer_Login(driver);
+        customer_login.UserAddedMsg();
     }
 
     @And("closes the browser")
     public void closesTheBrowser() {
         driver.quit();
     }
-
 
 }

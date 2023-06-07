@@ -107,8 +107,10 @@ public class Customer_Login extends AbstractPage {
     public void setSaveBtn(){
         saveBtn.click();
     }
-    public void UserAddedMsg(String msg){
+    public boolean UserAddedMsg(){
+        wait.until(ExpectedConditions.visibilityOf(successMsg));
         successMsg.isDisplayed();
+        return true;
     }
 
 }

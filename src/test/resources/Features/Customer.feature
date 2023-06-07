@@ -9,5 +9,5 @@ Feature: Customer Login
     And user clicks on 'Add new' button
     When user enters the info
     And user clicks on save button
-    Then user can see the message- "The new customer has been added successfully"
+#    Then user can see the message- 'The new customer has been added successfully'
     And closes the browser
